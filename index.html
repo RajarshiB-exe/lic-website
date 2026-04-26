@@ -10,26 +10,21 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: #f5f7fb;
-    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 .navbar {
-    position: sticky;
-    top: 0;
     background: #003a8f;
-    color: white;
+    padding: 14px;
     display: flex;
     justify-content: space-between;
-    padding: 14px 25px;
-    z-index: 1000;
+    color: white;
 }
 
 .navbar a {
     color: white;
     margin: 0 10px;
     text-decoration: none;
-    font-size: 14px;
 }
 
 .navbar a:hover {
@@ -41,89 +36,30 @@ body {
     background: linear-gradient(135deg,#003a8f,#0050b3);
     color: white;
     text-align: center;
-    padding: 80px 20px;
-}
-
-.hero h1 {
-    font-size: 38px;
-    margin: 0;
+    padding: 70px 20px;
 }
 
 .cta {
-    margin-top: 15px;
     display: inline-block;
-    padding: 12px 20px;
+    margin-top: 15px;
+    padding: 12px 18px;
     background: #ffcc00;
     color: black;
     font-weight: bold;
-    border-radius: 6px;
     text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.cta:hover {
-    transform: scale(1.05);
+    border-radius: 6px;
 }
 
 /* SECTIONS */
 .section {
     max-width: 900px;
-    margin: 30px auto;
+    margin: 20px auto;
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
-
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
 }
 
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 15px;
-}
-
-.card {
-    background: #eef3ff;
-    padding: 15px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: #dde8ff;
-}
-
-/* INPUT */
-input {
-    width: 90%;
-    padding: 10px;
-    margin: 8px 0;
-}
-
-/* BUTTON */
-button {
-    background: #ffcc00;
-    border: none;
-    padding: 10px 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-/* FLOAT BUTTONS */
+/* FLOAT */
 .float {
     position: fixed;
     right: 15px;
@@ -131,26 +67,10 @@ button:hover {
     border-radius: 50px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.call {
-    bottom: 80px;
-    background: #003a8f;
-}
-
-.wa {
-    bottom: 20px;
-    background: #25D366;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #003a8f;
-    color: white;
-}
+.call { bottom: 80px; background: #003a8f; }
+.wa { bottom: 20px; background: #25D366; }
 </style>
 </head>
 
@@ -160,10 +80,9 @@ footer {
 <div class="navbar">
     <div><b>LIC Advisor</b></div>
     <div>
-        <a href="#plans">Plans</a>
-        <a href="#calc">Calculator</a>
-        <a href="#inquiry">Inquiry</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="inquiry.html">Inquiry</a>
+        <a href="contact.html">Contact</a>
     </div>
 </div>
 
@@ -172,67 +91,31 @@ footer {
     <h1>Writuraj Bagchi</h1>
     <p>LIC Advisor | Serampore Branch 444</p>
 
-    <a class="cta" href="#inquiry">Get Free Consultation</a>
-
-    <a class="cta"
-    style="background:#25D366;color:white;"
-    href="https://wa.me/919875648424?text=Hi%20Writuraj%2C%20I%20am%20interested%20in%20LIC%20plans.%20Please%20guide%20me."
-    target="_blank">
-    WhatsApp Now
-    </a>
+    <a class="cta" href="inquiry.html">Get Free Consultation</a>
 </div>
 
-<!-- PLANS -->
-<div class="section" id="plans">
+<!-- CONTENT -->
+<div class="section">
     <h2>LIC Plans</h2>
-
-    <div class="cards">
-        <div class="card">Jeevan Labh</div>
-        <div class="card">Jeevan Umang</div>
-        <div class="card">Term Insurance</div>
-        <div class="card">Pension Plan</div>
-    </div>
+    <p>Jeevan Labh, Jeevan Umang, Term Insurance, Pension Plans</p>
 </div>
 
-<!-- CALCULATOR -->
-<div class="section" id="calc">
-    <h2>Premium Calculator</h2>
+<div class="section">
+    <h2>Calculator</h2>
 
-    <input id="p" type="number" placeholder="Amount">
-    <input id="t" type="number" placeholder="Years">
-    <input id="r" type="number" placeholder="Rate %">
+    <input id="p" placeholder="Amount"><br><br>
+    <input id="t" placeholder="Years"><br><br>
+    <input id="r" placeholder="Rate"><br><br>
 
     <button onclick="calc()">Calculate</button>
     <h3 id="res"></h3>
 </div>
 
-<!-- INQUIRY -->
-<div class="section" id="inquiry">
-    <h2>Free Consultation</h2>
-
-    <form action="https://formspree.io/f/mzdywbyl" method="POST">
-
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="tel" name="phone" placeholder="Mobile" required>
-        <input type="email" name="email" placeholder="Email">
-
-        <input type="text" name="plan" placeholder="Plan Interest">
-
-        <button type="submit">Submit Inquiry</button>
-    </form>
-</div>
-
-<!-- CONTACT -->
-<div class="section" id="contact">
-    <h2>Contact</h2>
+<div class="section">
+    <h2>Quick Contact</h2>
     <p>📞 9875648424</p>
     <p>📧 writurajbagchi137@gmail.com</p>
-    <p>🏢 Serampore Branch 444</p>
 </div>
-
-<footer>
-    © 2026 LIC Advisor | Writuraj Bagchi
-</footer>
 
 <!-- FLOAT BUTTONS -->
 <a class="float call" href="tel:+919875648424">Call</a>
@@ -243,28 +126,13 @@ target="_blank">
 WhatsApp
 </a>
 
-<!-- SCRIPT -->
 <script>
 function calc(){
-    let p = document.getElementById("p").value;
-    let t = document.getElementById("t").value;
-    let r = document.getElementById("r").value;
-
-    document.getElementById("res").innerText =
-    "Estimated Return: ₹ " + (p*t*r)/100;
+    let p=document.getElementById("p").value;
+    let t=document.getElementById("t").value;
+    let r=document.getElementById("r").value;
+    document.getElementById("res").innerText = (p*t*r)/100;
 }
-
-/* SCROLL ANIMATION */
-const sections = document.querySelectorAll(".section");
-
-window.addEventListener("scroll", () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add("show");
-        }
-    });
-});
 </script>
 
 </body>
